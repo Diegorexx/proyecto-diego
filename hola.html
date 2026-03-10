@@ -2,7 +2,7 @@
 <html>
 <head>
 
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--con esto cargo mis librerias de Chart.js -->
 <script src="mundo.js"></script>
  <link rel="stylesheet" href="estilo.css">
         <meta charset="utf-8">
@@ -16,6 +16,8 @@
 
 <p id="segundo_parrafo">Dimo.</p>
 
+<canvas id="grafica"></canvas>
+
 <button class="button-clikeame" onclick="lineaColor()">Cambiar color de linea de texto</button>
 
 <button onclick="clickeame()">Cambiar color</button>
@@ -24,5 +26,23 @@
 
 <p>Dimo empresa socialmente comprometida con el medio ambiente</p>
 <div class="test">this a test</div>
+
+<script>
+const ctx = document.getElementById('grafica');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['A','B','C','D'],
+        datasets: [{
+        label: 'Ventas',
+        data: [10,20,15,27],
+        backgroundColor: ['red','blue','green','pink'],
+        borderRadius: 10
+        
+        }]
+    }
+});
+</script>
 </body>
 </html>
