@@ -1,0 +1,35 @@
+/* Estilos generales */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.button-clikeame {
+    padding: 10px;
+    background-color: blue;
+    color: hsl(127, 95%, 57%);
+    border: none;
+    cursor: pointer;
+}
+.button-clickeame {
+    background-color: blue;
+
+}
+/* Párrafos */
+p {
+
+}
+
+.test {
+    background-color: green;
+}
+
+/* Clases */
+.clase {
+
+}
+
+
+.button-clikeame:hover {
+    background-color: #0d00ff;
+}
