@@ -15,20 +15,10 @@ body {
     background-color: blue;
 
 }
-/* Párrafos */
-p {
-
-}
 
 .test {
     background-color: green;
 }
-
-/* Clases */
-.clase {
-
-}
-
 
 .button-clikeame:hover {
     background-color: #0d00ff;
