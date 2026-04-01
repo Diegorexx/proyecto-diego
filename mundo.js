@@ -93,7 +93,8 @@ function getCharacters(){
   })
 }
 function retainacharacter() {
-  let id = Math.floor(Math.random() * 10) + 1;
+  let id = Math.floor(Math.random() * 100) + 1;
+  console.log(id);
 
   fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => res.json())
@@ -114,4 +115,26 @@ function retainacharacter() {
         </div>
       `;
     });
+  }
+function rickAlive(nombre_personaje, estatus) {
+  console.log("nombre", nombre_personaje)
+  console.log("esttaus", estatus)
+
+  fetch(`https://rickandmortyapi.com/api/character/?name=${nombre_personaje}&status=${estatus}`)
+    .then(res => res.json())
+    .then(personajes => {
+      console.log(`total de ${nombre_personaje} que estan ${estatus}:`, personajes.results.length);
+    })
+    .catch(error => console.error(error));
+
+    }
+function ubi(){
+    fetch(`https://rickandmortyapi.com/api/location`)
+    .then(res => res.json())
+    .then(ricks => {
+      console.log("total:", ricks)
+    })
+    .catch(error => console.error(error));
+
+
 }

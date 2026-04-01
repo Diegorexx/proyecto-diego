@@ -34,15 +34,34 @@
 
 <p id="segundo_parrafo">Dimo.</p>
 
-<div id="personajes"></div>
-
 <canvas id="grafica"></canvas>
+
+
+  <label for="nombres_personajes">Elige un personaje:</label>
+
+  <select name="nombres_personajes" id="nombres_personajes">
+    <option value="rick">Rick Sanchez</option>
+    <option value="Morty">Morty Smith</option>
+    <option value="Beth">Beth Smith</option>
+  </select>
+
+    <label for="estatus">Elige un estatus:</label>
+    <select name="estatus" id="estatus">
+    <option value="alive">Vivo</option>
+    <option value="dead">Muerto</option>
+  </select>
+
+  <button onclick="rickAlive(nombres_personajes.value, estatus.value)">Mandar filtros para personajes</button>
+  <br><br>
 
 <button class="button-clikeame" onclick="lineaColor()">Cambiar color de linea de texto</button>
 
 <button onclick="clickeame()">Cambiar color</button>
 <button onclick="getCharacters()">Personajes</button>
 <button onclick="retainacharacter()">Personaje unico</button>
+<button onclick="rickAlive()">Personaje rick</button>
+<button onclick="ubi()">Ubicacion de personaje</button>
+
 
 
 <p>Dimo empresa socialmente comprometida con el medio ambiente</p>
