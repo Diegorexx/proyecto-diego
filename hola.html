@@ -2,15 +2,33 @@
 <html>
 <head>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--con esto cargo mis librerias de Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--This is how I load my Chart.js libraries -->
 <script src="mundo.js"></script>
  <link rel="stylesheet" href="estilo.css">
         <meta charset="utf-8">
-        <title>Page Title</title>
+        <title>Prueba Diego</title>
+      <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
 </head>
 <body>
 
 <h1>My First Heading</h1>
+<h2>Personajes Rick & Morty</h2>
+
+<div id="personajes"></div>
 
 <p id="primer_parrafo">My first paragraph.</p>
 
@@ -18,31 +36,38 @@
 
 <canvas id="grafica"></canvas>
 
+
+  <label for="nombres_personajes">Elige un personaje:</label>
+
+  <select name="nombres_personajes" id="nombres_personajes">
+    <option value="rick">Rick Sanchez</option>
+    <option value="Morty">Morty Smith</option>
+    <option value="Beth">Beth Smith</option>
+  </select>
+
+    <label for="estatus">Elige un estatus:</label>
+    <select name="estatus" id="estatus">
+    <option value="alive">Vivo</option>
+    <option value="dead">Muerto</option>
+  </select>
+
+  <button onclick="rickAlive(nombres_personajes.value, estatus.value)">Mandar filtros para personajes</button>
+  <br><br>
+
 <button class="button-clikeame" onclick="lineaColor()">Cambiar color de linea de texto</button>
 
 <button onclick="clickeame()">Cambiar color</button>
+<button onclick="getCharacters()">Personajes</button>
+<button onclick="retainacharacter()">Personaje unico</button>
+<button onclick="rickAlive()">Personaje rick</button>
+<button onclick="ubi()">Ubicacion de personaje</button>
 
 
 
 <p>Dimo empresa socialmente comprometida con el medio ambiente</p>
 <div class="test">this a test</div>
 
-<script>
-const ctx = document.getElementById('grafica');
 
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['A','B','C','D'],
-        datasets: [{
-        label: 'Ventas',
-        data: [10,20,15,27],
-        backgroundColor: ['red','blue','green','pink'],
-        borderRadius: 10
-        
-        }]
-    }
-});
-</script>
+
 </body>
 </html>
