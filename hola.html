@@ -3,7 +3,7 @@
 <head>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--This is how I load my Chart.js libraries -->
-<script src="mundo.js"defer></script>
+<script src="mundo.js" defer></script>
  <link rel="stylesheet" href="estilo.css">
         <meta charset="utf-8">
         <title>Prueba Diego</title>
@@ -56,8 +56,8 @@
 -->
 <form id="miFormulario">
 
-  <label for="nombres_personajes">Elige un personaje:</label>
-  <select name="nombres_personajes" id="nombres_personajes">
+  <label>Elige un personaje:</label>
+  <select id="nombres_personajes">
     <option value="">--Selecciona--</option>
     <option value="rick">Rick Sanchez</option>
     <option value="morty">Morty Smith</option>
@@ -66,8 +66,8 @@
 
   <br><br>
 
-  <label for="estatus">Elige un estatus:</label>
-  <select name="estatus" id="estatus">
+  <label>Elige un estatus:</label>
+  <select id="estatus">
     <option value="">--Selecciona--</option>
     <option value="alive">Vivo</option>
     <option value="dead">Muerto</option>
@@ -81,21 +81,24 @@
 
 </form>
 
+<nav class="navbar">
+  <button onclick="clickeame()">Color texto</button>
+  <button onclick="lineaColor()">Color línea</button>
+  <button onclick="getCharacters()">Personajes</button>
+  <button onclick="retainacharacter()">Personaje único</button>
+  <button onclick="rickAlive(nombres_personajes.value, estatus.value)">Rick</button>
+  <button onclick="ubi()">Ubicación</button>
+  <button onclick="recurso()">POST</button>
+  <button onclick="recurso2()">PUT</button>
+  <button onclick="recurso3()">PATCH</button>
+  <button onclick="recursoEliminacion()">DELETE</button>
+  <button onclick="recursoFiltracion()">Filtrar</button>
+  <button onclick="recursoAnidado()">Anidado</button>
+</nav>
 
 
-<button class="button-clikeame" onclick="lineaColor()">Cambiar color de linea de texto</button>
-
-<button onclick="clickeame()">Cambiar color</button>
-<button onclick="getCharacters()">Personajes</button>
-<button onclick="retainacharacter()">Personaje unico</button>
-<button onclick="rickAlive()">Personaje rick</button>
-<button onclick="ubi()">Ubicacion de personaje</button>
-<button onclick="recurso()">Boton</button>
-<button onclick="recurso2()">Boton</button>
-<button onclick="recurso3()">Boton patch</button>
-<button onclick="recursoEliminacion()">Eliminacion</button>
-<button onclick="recursoFiltracion()">Boton filtracion</button>
-<button onclick="recursoAnidado()">Boton anidado</button>
+<h3>Resultados API</h3>
+<div id="resultadoAPI"></div>
 
 
 

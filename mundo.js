@@ -49,33 +49,7 @@ verificarNumero(7,
   }
 
 });
-/*function obtenerCaracteres() {
-  fetch('https://rickandmortyapi.com/api/character')
-    .then(response => response.json())
-    .then(dato => {
-      const contenedor = document.getElementById('personajes');
 
-      const personajes = dato.results.slice(0, 4);
-
-      personajes.forEach(personaje => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        card.innerHTML = `
-          <img src="${personaje.image}" alt="${personaje.name}">
-          <div class="container">
-            <h4>${personaje.name}</h4>
-            <p>${personaje.species}</p>
-          </div>
-        `;
-
-        contenedor.appendChild(card);
-      });
-    })
-    .catch(error => console.error(error));
-}
-
-obtenerCaracteres();*/
 function getCharacters(){
   fetch('https://rickandmortyapi.com/api/character')
   .then(chunks=>{
@@ -114,11 +88,11 @@ function retainacharacter() {
           </div>
         </div>
       `;
-    });1
+    });
   }
 function rickAlive(nombre_personaje, estatus) {
   console.log("nombre", nombre_personaje)
-  console.log("esttaus", estatus)
+  console.log("estatus", estatus)
 
     const traduccion = {
     alive: "Vivo",
@@ -170,7 +144,7 @@ formulario.addEventListener("submit", async function (evento) {
   rickAlive(personaje, estatus);
 });
 
-function recurso() {
+/*function recurso() {
   console.log("Esta es una prueba post");
 
   fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -182,24 +156,47 @@ function recurso() {
     .then((response) => response.json())
     .then((json) => console.log(json))
     .catch((error) => console.error("Error:", error));
+}*/
+function recurso() {
+  console.log("Esta es una prueba post");
+  const resultado = document.getElementById("resultadoAPI");
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: 'Nuevo Post',
+      body: 'Este es un post creado desde JS',
+      userId: 1
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(res => res.json())
+    .then(json => {
+      resultado.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`;
+    });
 }
 
 function recurso2() {
-  console.log("Esta es una prueba post 2");
-fetch('https://jsonplaceholder.typicode.com/posts/1', {
-  method: 'PUT',
-  body: JSON.stringify({
-    id: 1,
-    title: 'foo',
-    body: 'bar',
-    userId: 1,
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+  const resultado = document.getElementById("resultadoAPI");
+
+  fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'PUT',
+    body: JSON.stringify({
+      id: 1,
+      title: 'Post actualizado COMPLETO',
+      body: 'Reemplazo total',
+      userId: 1,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then(res => res.json())
+    .then(json => {
+      resultado.innerHTML = `<pre>${JSON.stringify(json, null, 2)}</pre>`;
+    });
 }
 
 function recurso3() {
