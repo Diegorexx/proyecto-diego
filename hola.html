@@ -3,7 +3,7 @@
 <head>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--This is how I load my Chart.js libraries -->
-<script src="mundo.js"></script>
+<script src="mundo.js" defer></script>
  <link rel="stylesheet" href="estilo.css">
         <meta charset="utf-8">
         <title>Prueba Diego</title>
@@ -37,7 +37,7 @@
 <canvas id="grafica"></canvas>
 
 
-  <label for="nombres_personajes">Elige un personaje:</label>
+<!--  <label for="nombres_personajes">Elige un personaje:</label>
 
   <select name="nombres_personajes" id="nombres_personajes">
     <option value="rick">Rick Sanchez</option>
@@ -53,14 +53,52 @@
 
   <button onclick="rickAlive(nombres_personajes.value, estatus.value)">Mandar filtros para personajes</button>
   <br><br>
+-->
+<form id="miFormulario">
 
-<button class="button-clikeame" onclick="lineaColor()">Cambiar color de linea de texto</button>
+  <label>Elige un personaje:</label>
+  <select id="nombres_personajes">
+    <option value="">--Selecciona--</option>
+    <option value="rick">Rick Sanchez</option>
+    <option value="morty">Morty Smith</option>
+    <option value="beth">Beth Smith</option>
+  </select>
 
-<button onclick="clickeame()">Cambiar color</button>
-<button onclick="getCharacters()">Personajes</button>
-<button onclick="retainacharacter()">Personaje unico</button>
-<button onclick="rickAlive()">Personaje rick</button>
-<button onclick="ubi()">Ubicacion de personaje</button>
+  <br><br>
+
+  <label>Elige un estatus:</label>
+  <select id="estatus">
+    <option value="">--Selecciona--</option>
+    <option value="alive">Vivo</option>
+    <option value="dead">Muerto</option>
+  </select>
+
+  <br><br>
+
+  <button type="submit">Mandar filtros para personajes</button>
+
+  <p id="mensajeError" style="color: red;"></p>
+
+</form>
+
+<nav class="navbar">
+  <button onclick="clickeame()">Color texto</button>
+  <button onclick="lineaColor()">Color línea</button>
+  <button onclick="getCharacters()">Personajes</button>
+  <button onclick="retainacharacter()">Personaje único</button>
+  <button onclick="rickAlive(nombres_personajes.value, estatus.value)">Rick</button>
+  <button onclick="ubi()">Ubicación</button>
+  <button onclick="recurso()">POST</button>
+  <button onclick="recurso2()">PUT</button>
+  <button onclick="recurso3()">PATCH</button>
+  <button onclick="recursoEliminacion()">DELETE</button>
+  <button onclick="recursoFiltracion()">Filtrar</button>
+  <button onclick="recursoAnidado()">Anidado</button>
+</nav>
+
+
+<h3>Resultados API</h3>
+<div id="resultadoAPI"></div>
 
 
 
